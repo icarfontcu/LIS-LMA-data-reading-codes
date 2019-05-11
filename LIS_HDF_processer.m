@@ -1,12 +1,12 @@
 %////////////////////////////////////////////
 %// LIS HDF4 data processor                //
 %//       MATLAB converter                 //
-%// Universitat Politècnica de Catalunya   //
+%// Universitat PolitÃ¨cnica de Catalunya   //
 %//   icar.fontcuberta@gmail.com           //
 %//                                        //
 %// Requires: MATLAB R2017b at least       //
 %//                                        //
-%//        version: 2018/09/23             //
+%//                                          //
 %////////////////////////////////////////////
 
 
@@ -266,7 +266,7 @@ function [interestingfiles, corruptfiles,a,b]=select_interestingfiles(read_dir,c
 %b=index for possible cannot-read files inside the folder
 %i = flash index inside the HDF file
 %-------------------------------------------------------------------------%
-disp('Selecting the interesting files from the interesting folders. This might take a while, depending on the nº of HDF4 files.');
+disp('Selecting the interesting files from the interesting folders. This might take a while, depending on the nÂº of HDF4 files.');
 addpath(read_dir);
 folderinfoprev=dir(read_dir);
 folderinfo=folderinfoprev(~ismember({folderinfoprev.name},{'.','..','.DS_Store'})); %.DS_Store is a metadata file created by iOS environment
@@ -523,7 +523,7 @@ for k=1:length(interestingfiles) %We will go through all interestingfiles
              
     else
     
-    %disp(['Printing file nº' num2str(k) ', ' filetextname ' @ ' write_dir]);
+    %disp(['Printing file nÂº' num2str(k) ', ' filetextname ' @ ' write_dir]);
     disp([num2str(k*100/ninterestingfiles) '% of .txt files printed']);
        
        %Write Header of the file
@@ -535,7 +535,7 @@ for k=1:length(interestingfiles) %We will go through all interestingfiles
           
         
        
-        j=1; %nº of intersting events in each file
+        j=1; %nÂº of intersting events in each file
  for i=1:length(event.tai_time) %HERE THE PROGRAM PRINTS
             
             eventinsidetime=false;
@@ -893,8 +893,8 @@ hold on;
         
         plot_interesting_area(centroid,ang_range);
         scatter(lons,lats,size,color,'x');
-        xlabel('Longitude [º]');
-        ylabel('Latitude [º]');
+        xlabel('Longitude [Âº]');
+        ylabel('Latitude [Âº]');
         grid on;
         title('Events detected. Size -> Radiance. Color -> group');
         axis equal;
